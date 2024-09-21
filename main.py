@@ -1,8 +1,6 @@
 
-import log_reader
+#import log_reader
 import wo_maker
-
-
 
 #input files
 logfilefuse  = r'in\wo\RFS-1-11915182725.txt'

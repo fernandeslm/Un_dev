@@ -15,7 +15,9 @@ def get_app(fileIn):
         if EntityId in line:
           EntityId = line.replace(EntityId, '').rstrip('\n')
         if env in line:
-          comment = '-' + line.replace(env, '').rstrip('\n')
+          env = line.replace(env, '').rstrip('\n')
+        
+      comment = EntityId + '-' + AppAbrv + '-' + env
     return comment.upper()
 
 
