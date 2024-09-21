@@ -1,0 +1,31 @@
+Unite Cloud Services - Request for Production Application Registration in Azure AD
+Form Data:
+App Owner Name: Jean Michel Sadoul
+App Owner Email: sadoul@un.org
+App Tech Lead Name: Pablo D. Martinez Domingo
+App Tech Lead Email: martinezdomingo@un.org
+1. FP First Name: Pablo D.
+1. FP Last Name: Martinez Domingo
+1. FP Email: martinezdomingo@un.org
+1. FP Unite ID: pmartine8
+App Name: Registration 365
+App ID: OICT-0258
+App Abbrev: Reg365
+App Description: Backend API to bind the Teams application to Storage and business logic with authentication
+Entity Name: OICT
+Environment: Other
+Environment (Other): PROD
+App Type: Web App
+Sign-on URL: https://login.microsoft.com/
+Redirect URI: Web
+Authentication: OAuth 2.0
+Open ID Reply URL: https://reg365-api.azurewebsites.net
+OpenID Logout URL: https://reg365-api.azurewebsites.net/logout
+Target Audience: Secretariat Only
+Group Membership: Yes
+Entity: Yes
+Location: Yes
+Telephone: Yes
+Language: Yes
+Audience: OICT-ESS-REG365-Audience_ALL
+OICT-ESS-REG365-Admins_ALL

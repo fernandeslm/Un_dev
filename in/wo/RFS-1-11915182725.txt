@@ -1,0 +1,15 @@
+Conduct Azure AD Application Integration Testing
+Unite Cloud Services - Request for Production Application Registration in Azure AD
+Form Data:
+App Name: UNJSPF Connect
+App ID: UNJSPF-0006
+App Abbrev: JSPFCX
+App Description: Service Now
+Entity Name: UNJSPF
+Environment: Other
+Environment (Other): Production
+App Type: Web App
+Sign-on URL: N/A
+Redirect URI: Web
+Authentication: OAuth 2.0
+Comments: We need an oAuth Registration for ServiceNow to be able to Authenticate and Access the SharedMailbox unjspf-connect@un.org The GraphAPI needed will be Mail.ReadWrite  (we can submit a separate request if needed). We have already submitted requests for dev and test
