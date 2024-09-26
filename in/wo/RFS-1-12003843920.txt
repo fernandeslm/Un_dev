@@ -4,10 +4,18 @@ App Owner Name: Jean Michel Sadoul
 App Owner Email: sadoul@un.org
 App Tech Lead Name: Pablo D. Martinez Domingo
 App Tech Lead Email: martinezdomingo@un.org
-1. FP First Name: Pablo D.
-1. FP Last Name: Martinez Domingo
-1. FP Email: martinezdomingo@un.org
-1. FP Unite ID: pmartine8
+1. FP First Name:  Slavko
+1. FP Last Name: Bosancic
+1. FP Email: slavko.bosancic@un.org
+1. FP Unite ID: slavko.bosancic
+2. FP First Name: Pinar
+2. FP Last Name: Dirin
+2. FP Email: pinar.dirin@un.org
+2. FP Unite ID: pinar.dirin
+3. FP First Name: Kailash
+3. FP Last Name: Dave
+3. FP Email:  kailash.dave@un.org
+3. FP Unite ID: kdave1
 App Name: Registration 365
 App ID: OICT-0258
 App Abbrev: Reg365

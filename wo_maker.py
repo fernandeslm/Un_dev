@@ -11,14 +11,52 @@ def get_app(fileIn):
     with open(fileIn, 'r') as read:
       for line in read:
         if AppAbrv in line:
-          AppAbrv = line.replace(AppAbrv, '').rstrip('\n')
+          comment = line.replace(AppAbrv, '').rstrip('\n') + '-'
         if EntityId in line:
-          EntityId = line.replace(EntityId, '').rstrip('\n')
+          comment += line.replace(EntityId, '').rstrip('\n') + '-'
         if env in line:
-          env = line.replace(env, '').rstrip('\n')
+          comment += line.replace(env, '').rstrip('\n')
         
-      comment = EntityId + '-' + AppAbrv + '-' + env
     return comment.upper()
 
 
 
+
+
+def get_owner(fileIn):
+    print('Owners:')
+    filterLn = ""
+    Fpmail = 'FP Email: '
+  
+    with open(fileIn, 'r') as read:
+      for line in read:
+        if Fpmail in line:
+          print (line.replace(Fpmail, '').rstrip('\n'))
+        
+    return 
+
+def signon(fileIn):
+    print('signon:')
+    filterLn = ""
+    signon = 'Sign-on URL: '
+  
+    with open(fileIn, 'r') as read:
+      for line in read:
+        if signon in line:
+          print (line.replace(signon, '').rstrip('\n'))
+        
+    return 
+
+def get_protocol(fileIn):
+    print('protocol_urls:')
+    filterLn = ""
+    reply_url = 'Open ID Reply URL: '
+    logout_url = 'OpenID Logout URL: '
+
+    with open(fileIn, 'r') as read:
+      for line in read:
+        if reply_url in line:
+          print ('reply: ' + line.replace(reply_url, '').rstrip('\n'))
+        if logout_url in line:
+          print ('logout: ' + line.replace(logout_url, '').rstrip('\n'))
+    return
