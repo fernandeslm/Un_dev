@@ -60,3 +60,27 @@ def get_protocol(fileIn):
         if logout_url in line:
           print ('logout: ' + line.replace(logout_url, '').rstrip('\n'))
     return
+    
+def get_group(fileIn):
+    print('Groups: ')
+
+def get_group(fileIn):
+    print('Groups:  ')
+    filterLn = ""
+    EntityId = 'Entity Name: '
+    AppAbrv ='App Abbrev: '
+    env = 'Environment (Other): '
+    guests = '-GUESTS-ASGM'
+    members = 'MEMBERS-ASGM'
+    message =  "-" + guests
+    
+    with open(fileIn, 'r') as read:
+      for line in read:
+        if AppAbrv in line:
+          comment = line.replace(AppAbrv, '').rstrip('\n') + '-'
+        if EntityId in line:
+          comment += line.replace(EntityId, '').rstrip('\n') + '-'
+        if env in line:
+          comment += line.replace(env, '').rstrip('\n')
+        
+    return comment.upper() + guests
