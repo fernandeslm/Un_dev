@@ -74,3 +74,14 @@ def get_group(fileIn):
           comment += line.replace(env, '').rstrip('\n')
         
     return comment.upper() + guests + ('\n') +  comment.upper() + members
+
+def get_fp_name(fileIn):
+    filterLn = ""
+    Fpmail = 'FP First Name:  '
+  
+    with open(fileIn, 'r') as read:
+      for line in read:
+        if Fpmail in line:
+          comment = (line.replace(Fpmail, '').rstrip('\n'))
+        
+    return comment[3:]

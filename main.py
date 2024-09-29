@@ -14,6 +14,7 @@ def main():
     wo_maker.get_protocol(logfilefuse)
     comment = wo_maker.get_group(logfilefuse)
     print(comment)
+    comment = wo_maker.get_fp_name(logfilefuse)
 
 if __name__ == "__main__":
     main()
