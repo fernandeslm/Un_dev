@@ -1,6 +1,4 @@
 
-
-
 def get_app(fileIn):
     print('Please name application:')
     filterLn = ""
@@ -17,11 +15,7 @@ def get_app(fileIn):
         if env in line:
           comment += line.replace(env, '').rstrip('\n')
         
-    return comment.upper()
-
-
-
-
+    return comment.upper() 
 
 def get_owner(fileIn):
     print('Owners:')
@@ -59,10 +53,7 @@ def get_protocol(fileIn):
           print ('reply: ' + line.replace(reply_url, '').rstrip('\n'))
         if logout_url in line:
           print ('logout: ' + line.replace(logout_url, '').rstrip('\n'))
-    return
-    
-def get_group(fileIn):
-    print('Groups: ')
+    return 
 
 def get_group(fileIn):
     print('Groups:  ')
@@ -71,8 +62,7 @@ def get_group(fileIn):
     AppAbrv ='App Abbrev: '
     env = 'Environment (Other): '
     guests = '-GUESTS-ASGM'
-    members = 'MEMBERS-ASGM'
-    message =  "-" + guests
+    members = '-MEMBERS-ASGM'
     
     with open(fileIn, 'r') as read:
       for line in read:
@@ -83,4 +73,4 @@ def get_group(fileIn):
         if env in line:
           comment += line.replace(env, '').rstrip('\n')
         
-    return comment.upper() + guests
+    return comment.upper() + guests + ('\n') +  comment.upper() + members
