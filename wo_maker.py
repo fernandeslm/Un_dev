@@ -3,8 +3,9 @@ def get_app(fileIn):
     print('Please name application:')
     filterLn = ""
     EntityId = 'Entity Name: '
-    AppAbrv ='App Abbrev: '
+    AppAbrv = 'App Abbrev: '
     env = 'Environment (Other): '
+    env2 = 'Environment: '
     
     with open(fileIn, 'r') as read:
       for line in read:
@@ -14,7 +15,8 @@ def get_app(fileIn):
           comment += line.replace(EntityId, '').rstrip('\n') + '-'
         if env in line:
           comment += line.replace(env, '').rstrip('\n')
-        
+        if env2 in line:
+          comment += line.replace(env2, '').rstrip('\n')
     return comment.upper() 
 
 def get_owner(fileIn):
@@ -61,6 +63,8 @@ def get_group(fileIn):
     EntityId = 'Entity Name: '
     AppAbrv ='App Abbrev: '
     env = 'Environment (Other): '
+    env2 = 'Environment: '
+
     guests = '-GUESTS-ASGM'
     members = '-MEMBERS-ASGM'
     
@@ -72,6 +76,8 @@ def get_group(fileIn):
           comment += line.replace(EntityId, '').rstrip('\n') + '-'
         if env in line:
           comment += line.replace(env, '').rstrip('\n')
+        if env2 in line:
+          comment += line.replace(env2, '').rstrip('\n')
         
     return comment.upper() + guests + ('\n') +  comment.upper() + members
 
