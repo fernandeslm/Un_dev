@@ -1,20 +1,18 @@
 
 #import log_reader
-import wo_maker
+from wo_maker import Wo
 
 #input files
-logfilefuse  = r'in\wo\RFS-1-12003843920.txt'
+logfilefuse  = r'in\wo\RFS-1-12099724937.txt'
 
+w = Wo(logfilefuse)
 def main():
 
-    comment = wo_maker.get_app(logfilefuse)
-    print(comment)
-    wo_maker.get_owner(logfilefuse)
-    wo_maker.signon(logfilefuse)
-    wo_maker.get_protocol(logfilefuse)
-    comment = wo_maker.get_group(logfilefuse)
-    print(comment)
-    comment = wo_maker.get_fp_name(logfilefuse)
+    w.get_appname()
+    w.get_owner()
+    w.signon()
+    w.get_protocol()
+    w.get_group()
 
 if __name__ == "__main__":
     main()
