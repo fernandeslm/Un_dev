@@ -2,9 +2,7 @@ class Wo:
   def __init__(self, fileIn):
     self.FileIn = fileIn
 
-  '''Entity Name'''
   def entity(self):      
-      filterLn = ""
       EntityId = 'Entity Name: '
       
       with open(self.FileIn, 'r') as read:
@@ -13,9 +11,7 @@ class Wo:
             comment = line.replace(EntityId, '').rstrip('\n')
       return comment.upper() 
   
-  '''App Abbrev'''
   def abrv(self):      
-      filterLn = ""
       AppAbrv = 'App Abbrev: '
       
       with open(self.FileIn, 'r') as read:
@@ -24,7 +20,6 @@ class Wo:
             comment = line.replace(AppAbrv, '').rstrip('\n')
       return comment.upper() 
   
-  '''Environment'''
   def env(self):
       #env = 'Environment (Other): '
       env2 = 'Environment: '
@@ -37,62 +32,8 @@ class Wo:
             comment = line.replace(env2, '').rstrip('\n')
       return comment.upper() 
 
-  '''Owner Email'''
-  def get_owner(self):
-      print('Owners:')
-      filterLn = ""
-      Fpmail = 'FP Email: '
-    
-      with open(self.FileIn, 'r') as read:
-        for line in read:
-          if Fpmail in line:
-            print (line.replace(Fpmail, '').rstrip('\n'))
-          
-      return 
-
-  '''Sign-on URL'''
-  def signon(self):
-      print('signon:')
-      filterLn = ""
-      signon = 'Sign-on URL: '
-    
-      with open(self.FileIn, 'r') as read:
-        for line in read:
-          if signon in line:
-            print (line.replace(signon, '').rstrip('\n'))
-          
-      return 
-
-  '''Open Id URL'''
-  def get_protocol(self):
-      print('protocol_urls:')
-      filterLn = ""
-      reply_url = 'Open ID Reply URL: '
-      logout_url = 'OpenID Logout URL: '
-
-      with open(self.FileIn, 'r') as read:
-        for line in read:
-          if reply_url in line:
-            print ('reply: ' + line.replace(reply_url, '').rstrip('\n'))
-          if logout_url in line:
-            print ('logout: ' + line.replace(logout_url, '').rstrip('\n'))
-      return 
-
-  '''Groups'''
-  def get_group(self):
-      members = '-MEMBERS-ASGM'
-      
-      comment = self.entity() + '-' + self.abrv() + '-' + self.env()
-      print('Groups:  ' + '\n' + comment +  members)
-
-  '''Create App Name'''
-  def get_appname(self):
-
-      comment = self.entity() + '-' + self.abrv() + '+' + self.env()
-      print('Please name application: ' + '\n' + comment) 
 
   #def get_fp_name(self):
-      filterLn = ""
       Fpmail = 'FP First Name:  '
     
       with open(self.FileIn, 'r') as read:
@@ -101,5 +42,71 @@ class Wo:
             comment = (line.replace(Fpmail, '').rstrip('\n'))
           
       return comment[3:]
+  
+  def owner(self):
+      Fpmail = 'FP Email: '
+      comment = ''
+      with open(self.FileIn, 'r') as read:
+        for line in read:
+          if Fpmail in line:
+           comment =+ (line.replace(Fpmail,'').rstrip('\n'))
+      return comment
 
+  def signon(self):
+      signon = 'Sign-on URL: '
+    
+      with open(self.FileIn, 'r') as read:
+        for line in read:
+          if signon in line:
+            comment = line.replace(signon, '').rstrip('\n')
+          
+      return comment
+
+  def reply(self):
+      reply_url = 'Open ID Reply URL: '
+
+      with open(self.FileIn, 'r') as read:
+        for line in read:
+          if reply_url in line:
+            comment = line.replace(reply_url, '').rstrip('\n')
+
+      return comment
+  
+  def logout(self):
+      logout_url = 'OpenID Logout URL: '
+
+      with open(self.FileIn, 'r') as read:
+        for line in read:
+          if logout_url in line:
+            comment = line.replace(logout_url, '').rstrip('\n')
+
+      return comment     
+    
+  def close(self):
+     app = self.entity() + '-' + self.abrv() + '-' + self.env()
+     owner = self.owner()
+     signon = self.signon()
+     reply = self.reply()
+     logout = self.logout()
+     #group = self.group()
+     
+     body = f"""
+Please name application: 
+{app}
+
+Owners:
+{owner}
+
+Sign-on URL: 
+{signon}
+
+Protocol_urls:
+{reply}
+{logout}
+
+Groups: 
+{app}-MEMBERS-ASGM
+
+"""
+     print (body)
 
