@@ -66,6 +66,7 @@ class Wo:
   def reply(self):
       reply_url = 'Open ID Reply URL: '
       saml = 'SAML Reply URL: '
+      comment = ''
       with open(self.FileIn, 'r') as read:
         for line in read:
           if reply_url in line:
@@ -77,6 +78,7 @@ class Wo:
   def logout(self):
       logout_url = 'OpenID Logout URL: '
       samllogout = 'SAML Logout URL: '
+      comment = ''
 
       with open(self.FileIn, 'r') as read:
         for line in read:
