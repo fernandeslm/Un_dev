@@ -49,7 +49,8 @@ class Wo:
       with open(self.FileIn, 'r') as read:
         for line in read:
           if Fpmail in line:
-           comment =+ (line.replace(Fpmail,'').rstrip('\n'))
+           comment += (line.replace(Fpmail,'')[3:])
+
       return comment
 
   def signon(self):
@@ -64,22 +65,25 @@ class Wo:
 
   def reply(self):
       reply_url = 'Open ID Reply URL: '
-
+      saml = 'SAML Reply URL: '
       with open(self.FileIn, 'r') as read:
         for line in read:
           if reply_url in line:
             comment = line.replace(reply_url, '').rstrip('\n')
-
+          elif saml in line:
+            comment =(line.replace(saml,'').rstrip('\n'))
       return comment
   
   def logout(self):
       logout_url = 'OpenID Logout URL: '
+      samllogout = 'SAML Logout URL: '
 
       with open(self.FileIn, 'r') as read:
         for line in read:
           if logout_url in line:
             comment = line.replace(logout_url, '').rstrip('\n')
-
+          elif samllogout in line:
+            comment =(line.replace(samllogout,'').rstrip('\n'))
       return comment     
     
   def close(self):
