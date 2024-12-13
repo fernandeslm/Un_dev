@@ -1,17 +1,15 @@
 
-import log_reader
-import wo_maker
-
-
+#import log_reader
+from wo_maker import Wo
 
 #input files
-logfilefuse  = r'in\wo\RFS-1-11915182725.txt'
+logfilefuse  = r'in\wo\rfs.txt'
 
+w = Wo(logfilefuse)
 def main():
 
-    comment = wo_maker.get_app(logfilefuse)
-    print(comment)
-    
+    w.close()
+
 if __name__ == "__main__":
     main()
     

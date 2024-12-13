@@ -1,0 +1,23 @@
+Unite Cloud Services - Request for Production Application Registration in Azure AD
+Form Data:
+App Owner Name: Roy Aoun
+App Owner Email: aoun2@un.org
+App Tech Lead Name: Roy Aoun
+App Tech Lead Email: aoun2@un.org
+1. FP First Name: Roy
+1. FP Last Name: Aoun
+1. FP Email: aoun2@un.org
+1. FP Unite ID: raoun
+App Name: Checkpoint remote access
+App ID: raoun
+App Abbrev: CHPKT
+App Description: Checkpoint VPN
+Entity Name: ICT
+Environment: Other
+Environment (Other): Production
+App Type: Native
+Sign-on URL: Chekpoint Firewall Applicane
+Redirect URI: Public Client
+Authentication: Other
+Authentication Other: MFA
+
